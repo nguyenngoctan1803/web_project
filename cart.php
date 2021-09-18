@@ -7,18 +7,18 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Your Cart</h2>
+			    	<h2>Giỏ hàng của bạn</h2>
 						<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="15%">Giá</th>
+								<th width="25%">Số lượng</th>
+								<th width="20%">Thành tiền</th>
+								<th width="10%"><img src="images/waste_104px.png" alt="delete" /></th>
 							</tr>
 							<tr>
-								<td>Product Title</td>
+								<td>Tên sản phẩm</td>
 								<td><img src="images/new-pic3.jpg" alt=""/></td>
 								<td>Tk. 20000</td>
 								<td>
@@ -28,21 +28,7 @@
 									</form>
 								</td>
 								<td>Tk. 40000</td>
-								<td><a href="">X</a></td>
-							</tr>
-							
-							<tr>
-								<td>Product Title</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
-									</form>
-								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">X</a></td>
+								<td><a href="">Xóa</a></td>
 							</tr>
 							
 							<tr>
@@ -56,20 +42,7 @@
 									</form>
 								</td>
 								<td>Tk. 40000</td>
-								<td><a href="">X</a></td>
-							</tr>
-							<tr>
-								<td>Product Title</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
-									</form>
-								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">X</a></td>
+								<td><a href="">Xóa</a></td>
 							</tr>
 							
 							<tr>
@@ -83,21 +56,48 @@
 									</form>
 								</td>
 								<td>Tk. 40000</td>
-								<td><a href="">X</a></td>
+								<td><a href="">Xóa</a></td>
+							</tr>
+							<tr>
+								<td>Product Title</td>
+								<td><img src="images/new-pic3.jpg" alt=""/></td>
+								<td>Tk. 20000</td>
+								<td>
+									<form action="" method="post">
+										<input type="number" name="" value="1"/>
+										<input type="submit" name="submit" value="Update"/>
+									</form>
+								</td>
+								<td>Tk. 40000</td>
+								<td><a href="">Xóa</a></td>
+							</tr>
+							
+							<tr>
+								<td>Product Title</td>
+								<td><img src="images/new-pic3.jpg" alt=""/></td>
+								<td>Tk. 20000</td>
+								<td>
+									<form action="" method="post">
+										<input type="number" name="" value="1"/>
+										<input type="submit" name="submit" value="Update"/>
+									</form>
+								</td>
+								<td>Tk. 40000</td>
+								<td><a href="">Xóa</a></td>
 							</tr>
 							
 						</table>
 						<table style="float:right;text-align:left;" width="40%">
 							<tr>
-								<th>Sub Total : </th>
+								<th>Tạm tính : </th>
 								<td>TK. 210000</td>
 							</tr>
 							<tr>
-								<th>VAT : </th>
+								<th>Thuế (VAT) : </th>
 								<td>TK. 31500</td>
 							</tr>
 							<tr>
-								<th>Grand Total :</th>
+								<th>Tổng tiền :</th>
 								<td>TK. 241500 </td>
 							</tr>
 					   </table>
@@ -107,7 +107,7 @@
 							<a href="index.php"> <img src="images/shop.png" alt="" /></a>
 						</div>
 						<div class="shopright">
-							<a href="login.php"> <img src="images/check.png" alt="" /></a>
+							<a href="login.php"> <img src="images/check_out.gif" alt="" /></a>
 						</div>
 					</div>
     	</div>  	

@@ -543,6 +543,19 @@ p.note{
 	border-radius:3px;
 	margin-top:2.6%;
 }
+.content_last{
+	padding:15px 20px;
+	border:1px solid #EBE8E8;
+	border-radius:3px;
+	margin-top:2.6%;
+}
+.related_product{
+	padding:15px 20px;
+	border:1px solid #EBE8E8;
+	border-radius:3px;
+	margin-top:2.6%;
+}
+
 .heading{
 	float:left;
 	margin-right:10%;
@@ -552,6 +565,7 @@ p.note{
 	font-size:22px;
 	color:#602D8D;
 	text-transform:uppercase;
+	font-weight: 600;
 }
 .sort,.show{
 	float:left;
@@ -685,10 +699,13 @@ p.note{
 		-o-transition: all 0.5s ease;
 		transition: all 0.5s ease;
 }
+.images_1_of_4:hover{
+	background: #DDD;
+}
 .images_1_of_4 .button a:hover{
      color:#70389C;
      background: #E8E8E8;
-}
+}	
 .images_1_of_4 .button span img{
 	position:absolute;
 }
@@ -746,9 +763,9 @@ p.note{
 .span_1_of_4  h4 {
 	color:#ccc;
 	margin-bottom: .5em;
-	font-size:1.2em;
+	font-size:18px;
 	line-height: 1.2;
-	font-family:'Doppio One', sans-serif;
+	font-family: Helvetica,Arial,sans-serif;
 	font-weight : normal;
 	margin-top: 0px;
 	letter-spacing: -1px;
@@ -756,8 +773,8 @@ p.note{
 	border-bottom:1px solid #474747;
 	padding-bottom:0.5em;
 }
-.span_1_of_4  li a{
-	font-size:0.8125em;
+.span_1_of_4  li {
+	font-size:15px;
 	padding:0.4em 0;
 	color:#979797;
 	font-family :Arial, Helvetica, sans-serif;
@@ -766,8 +783,8 @@ p.note{
 .span_1_of_4  li a:hover,.span_1_of_4  li span:hover{
 	color:#BBB7B7;
 }
-.span_1_of_4  li span{
-	font-size:1.2em;
+.span_1_of_4  li a{
+	font-size:15px;
 	padding:0.2em 0;
 	color:#979797;
 	display:block;
@@ -924,9 +941,9 @@ p.note{
 	padding:1.5%;
 }
 .images_3_of_2 img {
-  height: 302px;
+  height: 400px;
   max-width: 100%;
-  width: 100%;
+  width: 400px;
 }
 .span_3_of_2  h2 {
 	font-family: 'Monda', sans-serif;
@@ -1346,6 +1363,35 @@ p.note{
 	margin-left:4%;
 	margin-top:0px;
 }
+.about_desc p{
+	font-size:15px;
+	color:#777;
+	line-height:1.8em;
+	padding:5px 0;
+}
+.about_desc h2{
+	font-size:30px;
+	color: #6C6C6C;
+	padding:5px 0;
+	font-family: 'Monda', sans-serif;
+	font-weight: 700;
+}
+
+.about_desc p span{
+	font-size:15px;
+	color:#666;
+	font-family: 'Segoe UI', Ta	homa, Geneva, Verdana, sans-serif;
+	font-weight: 700;
+}
+.title_desc {
+	font-weight: 600;
+}
+
+.images-bookstore img{
+	padding-left: 250px;
+	padding-top: 30px;
+}
+
 .section {
 	clear: both;
 	padding: 0px;
@@ -1395,7 +1441,7 @@ p.note{
   border-bottom: 1px solid #ddd;
   font-size: 30px;
   margin-bottom: 20px;
-  width: 141px;
+  width: 5000px;
 }
 .tblone {
   border: 1px solid #fff;
@@ -1450,7 +1496,8 @@ table.tblone img {
 
 .shopright img {
   width: 270px;
-  outline:none
+  outline:none;
+  padding: 0px 0px 0px 220px;
 }
 
 .contact-form{
@@ -1517,6 +1564,12 @@ table.tblone img {
 	text-decoration:underline;
 	color:#444;
 	cursor:pointer;
+}
+.contact_inf p span{
+	font-size:15px;
+	color:#666;
+	font-family: 'Segoe UI', Ta	homa, Geneva, Verdana, sans-serif;
+	font-weight: 700;
 }
 .map{
 	border:1px solid #C7C7C7;
