@@ -24,7 +24,7 @@
   <div class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
+				<a href="index.php"><img src="images/tym.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">

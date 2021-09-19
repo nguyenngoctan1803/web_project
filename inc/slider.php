@@ -8,7 +8,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Văn Học(tên sách)</h2>
 						<p>Lorem ipsum dolor sit amet sed do eiusmod.</p>
-						<div class="button"><span><a href="details.php">Thêm vào giỏ hàng</a></span></div>
+						<div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 				   </div>
 			   </div>			
 				<div class="listview_1_of_2 images_1_of_2">
@@ -18,7 +18,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Kinh Tế(tên sách)</h2>
 						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
-						  <div class="button"><span><a href="details.php">Thêm vào giỏ hàng</a></span></div>
+						  <div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 					</div>
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Kỹ Năng Sống(tên sách)</h2>
 						<p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
-						<div class="button"><span><a href="details.php">Thêm vào giỏ hàng</a></span></div>
+						<div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 				   </div>
 			   </div>			
 				<div class="listview_1_of_2 images_1_of_2">
@@ -40,7 +40,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Sách Thiếu Nhi(tên sách)</h2>
 						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
-						  <div class="button"><span><a href="details.php">Thêm vào giỏ hàng</a></span></div>
+						  <div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 					</div>
 				</div>
 			</div>
