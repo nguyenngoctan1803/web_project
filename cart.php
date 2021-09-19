@@ -24,7 +24,7 @@
 								<td>
 									<form action="" method="post">
 										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>Tk. 40000</td>
@@ -38,7 +38,7 @@
 								<td>
 									<form action="" method="post">
 										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>Tk. 40000</td>
@@ -52,7 +52,7 @@
 								<td>
 									<form action="" method="post">
 										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>Tk. 40000</td>
@@ -65,7 +65,7 @@
 								<td>
 									<form action="" method="post">
 										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>Tk. 40000</td>
@@ -79,7 +79,7 @@
 								<td>
 									<form action="" method="post">
 										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>Tk. 40000</td>
