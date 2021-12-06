@@ -6,7 +6,6 @@
 						 <a href="details.php"> <img src="images/sach1.jpg" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
-
 						<h4>Văn Học(tên sách)</h4>
 						<p>mô tả</p>
 						<div class="button"><span><a href="details.php">chi tiết</a></span></div>
@@ -14,7 +13,12 @@
 						<h2>Văn Học(tên sách)</h2>
 						<p>Lorem ipsum dolor sit amet sed do eiusmod.</p>
 						<div class="button"><span><a href="details.php">Chi tiết</a></span></div>
-
+						<h4>Văn Học(tên sách)</h4>
+						<p>mô tả</p>
+						<div class="button"><span><a href="details.php">chi tiết</a></span></div>
+						<h2>Văn Học(tên sách)</h2>
+						<p>Lorem ipsum dolor sit amet sed do eiusmod.</p>
+						<div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 				   </div>
 			   </div>			
 				<div class="listview_1_of_2 images_1_of_2">
@@ -22,7 +26,6 @@
 						  <a href="details.php"><img src="images/sach1.jpg" alt="" / ></a>
 					</div>
 					<div class="text list_2_of_1">
-
 						  <h4>Sách Kinh Tế(tên sách)</h4>
 						  <p>mô tả</p>
 						  <div class="button"><span><a href="details.php">chi tiết</a></span></div>
@@ -30,7 +33,12 @@
 						  <h2>Kinh Tế(tên sách)</h2>
 						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
 						  <div class="button"><span><a href="details.php">Chi tiết</a></span></div>
-
+						  <h4>Sách Kinh Tế(tên sách)</h4>
+						  <p>mô tả</p>
+						  <div class="button"><span><a href="details.php">chi tiết</a></span></div>
+						  <h2>Kinh Tế(tên sách)</h2>
+						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
+						  <div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 					</div>
 				</div>
 			</div>
@@ -40,15 +48,18 @@
 						 <a href="details.php"> <img src="images/sach1.jpg" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
-
 						<h4>Kỹ Năng Sống(tên sách)</h4>
 						<p>mô tả</p>
 						<div class="button"><span><a href="details.php">chi tiết</a></span></div>
-
 						<h2>Kỹ Năng Sống(tên sách)</h2>
 						<p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
 						<div class="button"><span><a href="details.php">Chi tiết</a></span></div>
-
+						<h4>Kỹ Năng Sống(tên sách)</h4>
+						<p>mô tả</p>
+						<div class="button"><span><a href="details.php">chi tiết</a></span></div>
+						<h2>Kỹ Năng Sống(tên sách)</h2>
+						<p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
+						<div class="button"><span><a href="details.php">Chi tiết</a></span></div>
 				   </div>
 			   </div>			
 				<div class="listview_1_of_2 images_1_of_2">
@@ -59,7 +70,9 @@
 						  <h4>Sách Thiếu Nhi(tên sách)</h4>
 						  <p>mô tả</p>
 						  <div class="button"><span><a href="details.php">chi tiết</a></span></div>
-
+						  <h4>Sách Thiếu Nhi(tên sách)</h4>
+						  <p>mô tả</p>
+						  <div class="button"><span><a href="details.php">chi tiết</a></span></div>
 						  <h2>Sách Thiếu Nhi(tên sách)</h2>
 						  <p>Lorem ipsum dolor sit amet, sed do eiusmod.</p>
 						  <div class="button"><span><a href="details.php">Chi tiết</a></span></div>
