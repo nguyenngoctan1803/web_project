@@ -5,17 +5,17 @@
  <div class="main">
     <div class="content">
     	 <div class="login_panel">
-        	<h3>Existing Customers</h3>
-        	<p>Sign in with the form below.</p>
+        	<h3>Đăng nhập</h3>
+        	<p>Nhập Tên đăng nhập và mật khẩu:</p>
         	<form action="hello" method="get" id="member">
-                	<input name="Domain" type="text" value="Username" class="field" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
+                	<input name="Domain" type="text" value="Tên đăng nhập" class="field" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}">
                     <input name="Domain" type="password" value="Password" class="field" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
                  </form>
-                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
-                    <div class="buttons"><div><button class="grey">Sign In</button></div></div>
+                <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p> 
+                    <div class="buttons"><div><button class="grey">Đăng nhập</button></div></div>
                     </div>
     	<div class="register_account">
-    		<h3>Register New Account</h3>
+    		<h3>Đăng ký tài khoản</h3>
     		<form>
 		   			 <table>
 		   				<tbody>
@@ -69,8 +69,8 @@
 		    	</td>
 		    </tr> 
 		    </tbody></table> 
-		   <div class="search"><div><button class="grey">Create Account</button></div></div>
-		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+		   <div class="search"><div><button class="grey">Đăng ký</button></div></div>
+		    <!-- <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p> -->
 		    <div class="clear"></div>
 		    </form>
     	</div>  	
