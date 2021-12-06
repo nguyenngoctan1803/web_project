@@ -1,3 +1,30 @@
+<?php
+    include 'lib/session.php';
+    Session::init();
+?>
+<?php
+	include 'lib/database.php';
+	include 'helper/format.php';
+
+	spl_autoload_register(function($className)
+	{
+		include_once "classes/".$className.".php";
+	});
+	
+	$db = new Database();
+	$fm = new Format();
+	$user = new user();
+	$cart = new cart();
+	$cat = new category();	
+	$prd = new product();
+
+?>
+<?php
+  header("Cache-Control: no-cache, must-revalidate");
+  header("Pragma: no-cache"); 
+  header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
+  header("Cache-Control: max-age=2592000");
+?>
 <!DOCTYPE HTML>
 <head>
 <title>Store Website</title>
@@ -24,25 +51,26 @@
   <div class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
+				<a href="index.php"><img src="images/logoTYM.png" alt="" /></a>
 			</div>
-			  <div class="header_top_right">
-			    <div class="search_box">
+			<div class="header_top_right">
+			   <div class="search_box">	
 				    <form>
-				    	<input type="text" value="Search for Products" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="SEARCH">
+				    	<input type="text" value="Tìm kiếm sản phẩm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm';}"/> <input type="image" src="images/searchh.png" width="30"/>		   			
 				    </form>
-			    </div>
-			    <div class="shopping_cart">
-					<div class="cart">
-						<a href="#" title="View my shopping cart" rel="nofollow">
-								<span class="cart_title">Cart</span>
-								<span class="no_product">(empty)</span>
-							</a>
-						</div>
-			      </div>
-		   <div class="login"><a href="login.php">Login</a></div>
-		 <div class="clear"></div>
-	 </div>
+			   </div>
+		   		<div class="account">
+		   			<div>
+		   				<input type="image" name="login" value="cart" src="images/cart.png" width="35">
+		   				<input type="image" name="login" value="heart" src="images/heart.png" width="35">
+		   				<input type="image" name="login" value="cart" src="images/admin.png" width="35">
+		   			</div>
+		   				
+		   
+		   				
+		   		</div>
+		 		<div class="clear"></div>
+	 		</div>
 	 <div class="clear"></div>
  </div>
 <div class="menu">

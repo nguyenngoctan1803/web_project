@@ -1,6 +1,5 @@
 <?php
 		include 'inc/header.php';
-		include 'inc/slider.php';
 ?>
 
  <div class="main">
@@ -20,7 +19,7 @@
 					</div>
 				<div class="add-cart">
 					<form action="cart.php" method="post">
-						<input type="number" class="buyfield" name="" value="1"/>
+						<input type="number" class="buyfield" name="" value="1" min="0" />
 						<input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
 					</form>				
 				</div>

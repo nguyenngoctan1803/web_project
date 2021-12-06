@@ -35,7 +35,7 @@ body{
 	background:#FFF;
 }
 .header_top{
-	padding:20px 0;
+	padding:10px 0;
 }
 .logo{
 	float:left;
@@ -45,14 +45,19 @@ body{
 .header_top_right{
 	float:left;
 	width:67%;
-	margin-top:35px;
+	height:100%;
+	margin-top:10px;
 }
+/*  */
 .search_box{
 	float:left;
-	border: 1px solid #DBDBDB;
+	border: 1px solid #17a2b8;
+	border-radius: 40px;
 	position:relative;
 	width:47%;
+	margin-top:20px;
 }
+
 .search_box input[type="text"]{
 	width:74%;
 	padding:9px 8px;
@@ -60,23 +65,31 @@ body{
 	border:none;
 	background:none;
 	font-size:14px;
-	color:#a5a5a5;
+	color:#000;
 	font-family:Arial;
 	outline:none;
 	margin:0;
 }
-.search_box input[type="submit"]{
-	border:none;
+.input-group-btn {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    padding: 0;
+}
+.input-group-field, .input-group-btn {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+}
+/*  */
+.search_box input[type="image"]{
+	border-radius: 0;
+	border: none;
 	cursor:pointer;
 	color:#FFF;
-	font-size:12px;
-	padding:10px 15px;
-	height: 36px;
+	padding: 3px 10px;
+	background-color: transparent;
 	margin:0;
-	background: -webkit-gradient(linear,left top,left bottom,from(#70389C),to(#602D8D));
-	background: -moz-linear-gradient(top,#70389C,#602D8D);
-	background: -o-linear-gradient(top,#70389C,#602D8D);
-	background: -ms-linear-gradient(top,#70389C,#602D8D);
 	-webkit-transition: all .9s;
 	-moz-transition: all .9s;
 	-o-transition: all .9s;
@@ -86,10 +99,19 @@ body{
 	right:0;
 	top:0;
 }
-.search_box input[type="submit"]:hover{
-	background:#444;
+.account{
+	float: right;
+	/*border: 1px solid #17a2b8;*/
+	position:relative;
+	margin-right:80px;
+	margin-top:10px;
+	text-align: right;
 }
-.shopping_cart{
+.account [type="image"]{
+	margin-right:30px;
+}
+
+ .shopping_cart{
 	float:left;
 	width: 202px;
 	position:relative;
@@ -140,7 +162,7 @@ input[type="number"] {
   padding: 7px;
 }
 .buysubmit{
-	background: #602d8d url("../images/large-button-overlay.png") repeat scroll 0 0;
+	background: #ed0606 url("../images/large-button-overlay.png") repeat scroll 0 0;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	color: #fff;
@@ -151,6 +173,9 @@ input[type="number"] {
 	cursor:pointer;
 	outline:none;
 }
+.buysubmit:hover{
+	background: #eb4545;
+}
 .wrapper-dropdown.active .dropdown{
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	max-height: 400px;
@@ -158,6 +183,10 @@ input[type="number"] {
 	z-index: 1;
 	background: #70389C;
 }
+
+
+   	
+
 .login {
   background: rgba(0, 0, 0, 0) url("../images/gradient_light-1.png") repeat-x scroll 0 0;
   border: 1px solid #cecece;
@@ -170,11 +199,11 @@ input[type="number"] {
   margin-left: 10px;
   text-align: center;
   width: 144px;
-}
+} 
 .login a {
 	color:#333;
 }
-/*** Login ***/
+/*** Login **
 .register_account h3,.login_panel h3{
 	font-size: 22px;
 	color: #6C6C6C;
@@ -300,16 +329,16 @@ p.note{
         filter            : progid:DXImageTransform.Microsoft.gradient( startColorstr='#525252', endColorstr='#454646',GradientType=0 );
         text-shadow       : 0 1px 0 rgba(0, 0, 0, 0.4);  
 }
-/** End Login ***/
+/** End Login **
 .wrapper-dropdown{
-    /* Size & position */
+    /* Size & position
  	float: left;
 	width:61px;
 	height: 38px;
 	position: relative;
 	margin-left: 10px;
 	padding: 0 0 0 12px;
-    /* Styles */
+    /* Styles
    background: url(../images/gradient_light-1.png) 0 0 repeat-x;
 	font: bold 13px/36px "Arial";
 	color: #4F4F4F;
@@ -453,7 +482,6 @@ p.note{
     zoom:1;
 }
 .listview_1_of_2{
-	display: block;
 	float:left;
 	margin: 1.4% 0 0% 1.6%;
 	box-shadow: 0px 0px 3px rgb(150, 150, 150);
@@ -499,23 +527,29 @@ p.note{
 .list_2_of_1 .button{
 	line-height:1.9em;
 	margin-top:0.5em;
+	/* transform: scale(1.03); */
 }
 .list_2_of_1 .button a{
 	padding:7px 15px;
 		font-size:0.8em;
 		font-family: Arial, "Helvetica Neue", "Helvetica", Tahoma, Verdana, sans-serif;
-		border: 1px solid rgba(0,0,0,0.1);
-        background:#602D8D url(../images/large-button-overlay.png);       
+		border: 1px solid #eb8841;
+        background:#eb6607 url(../images/large-button-overlay.png);       
         color             : #fff;
         text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25);
 		-moz-border-radius:5px;
 		-webkit-border-radius:5px;
 		border-radius:5px;
 }
+
+.list_2_of_1 .button:hover{
+	transform: scale(1.04);
+}
 .list_2_of_1 .button a:hover{
-	    border: 1px solid #4D00A0;
-        background:#70389C;
-        text-decoration:none; 
+	    border: 1px solid #eb8841;
+        background:#eb8841;
+        /* text-decoration:none;  */
+        /* transform: scale(1.03); */
 }
 .header_bottom_right_images{
 	float:left;
@@ -527,11 +561,7 @@ p.note{
 	padding:20px 0;
 	background:#FFF;
 }
-.content h2{ 
-	font-size:23px;
-	color:#6C6C6C;
-	font-family: 'Monda', sans-serif;
-}
+
 .content_top{
 	padding:15px 20px;
 	border:1px solid #EBE8E8;
@@ -545,7 +575,7 @@ p.note{
 }
 .content_last{
 	padding:15px 20px;
-	border:1px solid #EBE8E8;
+	/* border:1px solid #EBE8E8; */
 	border-radius:3px;
 	margin-top:2.6%;
 }
@@ -567,6 +597,7 @@ p.note{
 	text-transform:uppercase;
 	font-weight: 600;
 }
+
 .sort,.show{
 	float:left;
 	width:14%;
@@ -681,30 +712,27 @@ p.note{
 	font-size: 14px;
 	line-height: 15px;
 	text-transform: none;
-	color: #737370;
+	color: #fff;
 	text-decoration: none!important;
-	background: url(../images/button-bg.png) repeat-x 0 0 #E8E8E8;
+	background:  #eb6607;
 	display: inline-block;
-	border-left: 1px solid #D4D4D4!important;
-	border-right: 1px solid #ADADAD!important;
-	border-top: 1px solid #E0E0E0!important;
-	border-bottom: 1px solid #9C9C9C!important;
 	cursor: pointer!important;
 	margin: 0 2px;
-	border-radius: 2px;
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	-webkit-transition: all 0.5s ease;
+	border-radius: 10px;
+	/* -moz-border-radius: 2px;
+	-webkit-border-radius: 2px; */
+	/* -webkit-transition: all 0.5s ease;
 		-moz-transition: all 0.5s ease;
-		-o-transition: all 0.5s ease;
-		transition: all 0.5s ease;
+		-o-transition: all 0.5s ease; */
+		/* transition: all 0.5s ease; */
 }
 .images_1_of_4:hover{
 	background: #DDD;
 }
 .images_1_of_4 .button a:hover{
-     color:#70389C;
-     background: #E8E8E8;
+     color:#fff;
+     background: #eb8841;
+     transform: scale(1.1);
 }	
 .images_1_of_4 .button span img{
 	position:absolute;
@@ -851,13 +879,15 @@ p.note{
 	bottom:10px;
 	right:10px;
 	overflow:hidden;
-	width:48px;
-	height:48px;
+	width:60px;
+	height:60px;
 	border:none;
 	text-indent:100%;
-	background:url(../images/arrow_up.png) no-repeat right top;
+	background:url(../images/arrow.png)  no-repeat right top;
 }
-
+#toTop:hover{
+	 transform: scale(1.2);
+}
 #toTopHover {
 	width:48px;
 	height:48px;
@@ -1030,7 +1060,7 @@ p.note{
 }
 .product-desc h2,.product-tags h2{
 	padding:8px 20px;
-	background:#602D8D;
+	background:#2c55a5;
 	border: 1px solid #EBE8E8;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -1437,12 +1467,16 @@ p.note{
   overflow: hidden;
   padding: 10px;
 }
-.cartpage h2 {
-  border-bottom: 1px solid #ddd;
-  font-size: 30px;
-  margin-bottom: 20px;
-  width: 5000px;
+.cartpage h3 {
+	border-bottom: 1px solid #ddd;
+	font-size: 30px;
+	margin-bottom: 10px;
+	font-family: 'Monda', sans-serif;
+	color: #6C6C6C;
+	text-transform:uppercase;
+	font-weight: 600;
 }
+
 .tblone {
   border: 1px solid #fff;
   margin-bottom: 12px;
