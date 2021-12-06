@@ -1,13 +1,12 @@
 <?php
 		include 'inc/header.php';
-		include 'inc/slider.php';
 ?>
 
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Giỏ hàng của bạn</h2>
+			    	<h3>Giỏ hàng của bạn</h3> 
 						<table class="tblone">
 							<tr>
 								<th width="20%">Tên sản phẩm</th>
