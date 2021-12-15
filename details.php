@@ -1,21 +1,39 @@
 <?php
 		include 'inc/header.php';
 ?>
+<?php 
+	if(!isset($_GET['prdid']) || $_GET['prdid']==NULL)
+   {
+      echo "<script>window.location = '404.php'</script>";
+   }
+   else
+   {
+      $id = $_GET['prdid'];
+   }
+?>
 
  <div class="main">
     <div class="content">
     	<div class="section group">
+    		<?php
+    			$get_prd_detail = $prd->get_detail($id); 
+    			if($get_prd_detail)
+    			{
+    				while($result_detail = $get_prd_detail->fetch_assoc())
+    				{	   				
+    			
+    		?>
 				<div class="cont-desc span_1_of_2">				
 					<div class="grid images_3_of_2">
 						<img src="images/sach1.jpg" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
-					<h2>Không chiến thắng thì không thể sinh tồn( Tên sách ) </h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>					
+					<h2><?php echo $result_detail['prd_Name'] ?></h2>
+					<p><?php echo $fm->textShorten($result_detail['prd_Des'],100) ?></p>					
 					<div class="price">
-						<p>Giá: <span>$500</span></p>
-						<p>Danh mục: <span>Văn học</span></p>
-						<p>Thể loại:<span>Kỹ năng sống</span></p>
+						<p>Giá: <span><?php echo $result_detail['prd_Price']." "."VNĐ" ?></span></p>
+						<p>Danh mục: <span><?php echo $result_detail['cate_Name'] ?></span></p>
+						<p>Thể loại:<span><?php echo $result_detail['brand_Name'] ?></span></p>
 					</div>
 				<div class="add-cart">
 					<form action="cart.php" method="post">
@@ -26,26 +44,19 @@
 			</div>
 			<div class="product-desc">
 			<h2>Mô tả sản phẩm</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			<p><?php echo $fm->textShorten($result_detail['prd_Des'],100) ?></p>
+	        <p></p>
 	    </div>
 				
-	</div>
+				</div>
+			<?php 
+					}
+				}
+			?>
 				<div class="rightsidebar span_3_of_1">
 					<h2>Danh mục sản phẩm</h2>
 					<ul>
-				      <li><a href="productbycat.php">Văn học</a></li>
-				      <li><a href="productbycat.php">Kinh tế</a></li>
-				      <li><a href="productbycat.php">Kỹ năng sống</a></li>
-				      <li><a href="productbycat.php">Accessories</a></li>
-				      <li><a href="productbycat.php#">Software</a></li>
-					   <li><a href="productbycat.php">Sports & Fitness</a></li>
-					   <li><a href="productbycat.php">Footwear</a></li>
-					   <li><a href="productbycat.php">Jewellery</a></li>
-					   <li><a href="productbycat.php">Clothing</a></li>
-					   <li><a href="productbycat.php">Home Decor & Kitchen</a></li>
-					   <li><a href="productbycat.php">Beauty & Healthcare</a></li>
-					   <li><a href="productbycat.php">Toys, Kids & Babies</a></li>
+				      <li><a href="productbycat.php">Văn học</a></li>				      
     				</ul>
     	
  				</div>	 
