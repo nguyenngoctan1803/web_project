@@ -59,15 +59,10 @@
 				    	<input type="text" value="Tìm kiếm sản phẩm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm';}"/> <input type="image" src="images/searchh.png" width="30"/>		   			
 				    </form>
 			   </div>
-		   		<div class="account">
-		   			<div>
-		   				<input type="image" name="login" value="cart" src="images/cart.png" width="35">
-		   				<input type="image" name="login" value="heart" src="images/heart.png" width="35">
-		   				<input type="image" name="login" value="cart" src="images/admin.png" width="35">
-		   			</div>
-		   				
-		   
-		   				
+		   		<div class="account">	   			
+		   				<a href="cart.php"><img src="images/cart.png"  margin-left="100px" alt="" width="30px" /></a>
+		   				<a href="cart.php"> <img src="images/heart.png" alt="" width="27px" /></a>
+		   				<a href="login.php"> <img src="images/admin.png" alt="" width="30px" /></a> 				
 		   		</div>
 		 		<div class="clear"></div>
 	 		</div>

@@ -1,12 +1,40 @@
 <?php
 		include 'inc/header.php';
 ?>
-
+<?php 
+	if(isset($_GET['cartid']))
+  	{
+      $id = $_GET['cartid'];
+      $delCart = $cart->delete_cart($id);
+   }
+	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
+   {
+   	$cart_Id = $_POST['cart_Id'];
+   	$quantily = $_POST['quantily'];
+      $update_quantily = $cart->Update_Quantily($quantily, $cart_Id);
+      if($quantily<=0)
+      {
+      	$delCart = $cart->delete_cart($cart_Id);
+      }
+   }
+?>
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
 			    	<h3>Giỏ hàng của bạn</h3> 
+			    	<?php 
+			    		if(isset($update_quantily))
+			    		{
+			    			echo $update_quantily;
+			    		}
+			    	?>
+			    	<?php 
+			    		if(isset($delCart))
+			    		{
+			    			echo $delCart;
+			    		}
+			    	?>
 						<table class="tblone">
 							<tr>
 								<th width="20%">Tên sản phẩm</th>
@@ -16,90 +44,78 @@
 								<th width="20%">Thành tiền</th>
 								<th width="10%"><img src="images/waste_104px.png" alt="delete" /></th>
 							</tr>
+							<?php
+								$get_prd_cart = $cart->get_prd_cart();
+								if($get_prd_cart)
+								{
+									$subtotal = 0;
+									while($result = $get_prd_cart->fetch_assoc())
+									{
+
+							?>
 							<tr>
-								<td>Tên sản phẩm</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
+								<td><?php echo $result['cart_Name'] ?></td>
+								<td><img src="admin/uploads/<?php echo $result['cart_Image']?>" alt=""/></td>
+								<td><?php echo $result['cart_Price'] ?></td>
 								<td>
 									<form action="" method="post">
-										<input type="number" name="" value="1"/>
+										<input type="hidden" name="cart_Id" value="<?php echo $result['cart_Id'] ?>"/>
+										<input type="number" name="quantily" min="0" value="<?php echo $result['cart_Quantily']?>"/>
 										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">Xóa</a></td>
-							</tr>
-							
-							<tr>
-								<td>Product Title</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
 								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Cập nhật"/>
-									</form>
+									<?php 
+										$total = $result['cart_Price'] * $result['cart_Quantily'];
+										echo $total;
+									?>								 	
 								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">Xóa</a></td>
+								<td><a href="?cartid=<?php echo $result['cart_Id'] ?>">Xóa</a></td>
 							</tr>
-							
-							<tr>
-								<td>Product Title</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Cập nhật"/>
-									</form>
-								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">Xóa</a></td>
-							</tr>
-							<tr>
-								<td>Product Title</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Cập nhật"/>
-									</form>
-								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">Xóa</a></td>
-							</tr>
-							
-							<tr>
-								<td>Product Title</td>
-								<td><img src="images/new-pic3.jpg" alt=""/></td>
-								<td>Tk. 20000</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Cập nhật"/>
-									</form>
-								</td>
-								<td>Tk. 40000</td>
-								<td><a href="">Xóa</a></td>
-							</tr>
-							
+							<?php 	
+										$subtotal += $total;
+									}
+								}
+							?>								
 						</table>
-						<table style="float:right;text-align:left;" width="40%">
+							<?php 
+								$check_cart = $cart->check_cart();
+								if($check_cart)
+								{
+
+								
+							?>
+						<table style="float:right;text-align:left" width="30%">
 							<tr>
-								<th>Tạm tính : </th>
-								<td>TK. 210000</td>
+								<th width="120px">Tạm tính :</th>
+								<td>
+									<?php  
+										echo $subtotal;
+									?>								
+								</td>
 							</tr>
 							<tr>
-								<th>Thuế (VAT) : </th>
-								<td>TK. 31500</td>
+								<th>Thuế (VAT) :</th>
+								<td>10%</td>
 							</tr>
 							<tr>
 								<th>Tổng tiền :</th>
-								<td>TK. 241500 </td>
+								<td>
+									<?php 
+										$vat = $subtotal * 0.1;
+										$sum = $vat + $subtotal;
+										echo $sum;
+									?>								
+								</td>
 							</tr>
 					   </table>
+					   	<?php 
+					   		}
+					   		else
+					   		{
+					   			echo '<span style = "color:green;font-size:20px;">Giỏ hàng của bạn trống!Go Shopping!</span>';
+					   		}
+					   	?>
 					</div>
 					<div class="shopping">
 						<div class="shopleft">

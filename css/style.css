@@ -25,6 +25,7 @@ body{
 	font-family:Arial, Helvetica, sans-serif;
 	background:url(../images/body_bg3.jpg);
 }
+
 .wrap{
 	width:78%;
 	margin:0 auto;
@@ -106,9 +107,6 @@ body{
 	margin-right:80px;
 	margin-top:10px;
 	text-align: right;
-}
-.account [type="image"]{
-	margin-right:30px;
 }
 
  .shopping_cart{
@@ -2561,4 +2559,12 @@ p.terms {
 		width:92%;
 		padding:4%;
 	}
+}
+.success{
+	color: green;
+	font-size: 18px;
+}
+.error{
+	color: red;
+	font-size: 18px;
 }
