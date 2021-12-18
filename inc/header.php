@@ -15,6 +15,7 @@
 	$fm = new Format();
 	$user = new user();
 	$cart = new cart();
+	$cus = new customer();
 	$cat = new category();	
 	$prd = new product();
 
@@ -59,11 +60,39 @@
 				    	<input type="text" value="Tìm kiếm sản phẩm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm';}"/> <input type="image" src="images/searchh.png" width="30"/>		   			
 				    </form>
 			   </div>
-		   		<div class="account">	   			
-		   				<a href="cart.php"><img src="images/cart.png"  margin-left="100px" alt="" width="30px" /></a>
-		   				<a href="cart.php"> <img src="images/heart.png" alt="" width="27px" /></a>
-		   				<a href="login.php"> <img src="images/admin.png" alt="" width="30px" /></a> 				
+		   		<div class="shopping_cart">
+		   			<div class="cart">
+		   				<a href="#" title="Giỏ hàng" rel="nofollow">
+		   					<img width="30px" src="images/cart.png" alt="">
+		   				</a>
+		   			</div>	   			
+		   				
 		   		</div>
+		   		<?php 
+		   		if(isset($_GET['customerid']))
+		   		{
+		   			$deytroyCart = $cart->destroy_cart();
+		   			Session::destroy();
+		   		}
+		   		?>
+		   		<div class="login">
+		   			<a href="login.php">
+		   				<img width="30px" src="images/admin.png" alt="">   				
+		   			</a>	   			
+		   		</div>
+		   		<div class="account_title">
+		   			<?php 
+		   				$login_check = Session::get('customer_login');
+		   				if($login_check)
+		   				{
+		   					echo '<a href="?customerid='.Session::get('customer_id').'" title="Đăng xuất">Đăng xuất</a>';
+		   				}
+		   				else
+		   				{
+		   					echo '<a href="login.php" title="Đăng nhập">Đăng nhập</a>';
+		   				}
+		   			?>
+		   		</div>	
 		 		<div class="clear"></div>
 	 		</div>
 	 <div class="clear"></div>
@@ -73,8 +102,29 @@
 	  <li><a href="index.php">Home</a></li>
 	  <li><a href="products.php">Products</a> </li>
 	  <li><a href="topbrands.php">Top Brands</a></li>
-	  <li><a href="cart.php">Cart</a></li>
+	  <?php 
+	  	$check_cart = $cart->check_cart();
+	  	if($check_cart)
+	  	{
+	  		echo '<li><a href="cart.php">Cart</a></li>';
+	  	}
+	  	else
+	  	{
+	  		echo '';
+	  	}
+	  ?>  
 	  <li><a href="contact.php">Contact</a> </li>
+	  <?php 
+	  	$login_check = Session::get('customer_login');
+	  	if($login_check)
+	  	{
+	  		echo '<li><a href="profile.php">Profile</a> </li>';
+	  	}
+	  	else
+	  	{
+	  		echo '';
+	  	}
+	  ?>  
 	  <div class="clear"></div>
 	</ul>
 </div>

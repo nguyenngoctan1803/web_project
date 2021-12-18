@@ -50,9 +50,26 @@
 			return $result;
 		}
 
+		public function show_category_index()
+		{
+			$query = "SELECT * FROM tbl_category order by cate_Id asc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
 		public function getcatebyId($id)
 		{
 			$query = "SELECT * FROM tbl_category where cate_Id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+		public function get_prd_cate($id)
+		{
+			$query= "SELECT tbl_product.*, tbl_category.cate_Name
+					FROM tbl_product 
+					INNER JOIN tbl_category ON tbl_product.cate_Id = tbl_category.cate_Id					
+					WHERE tbl_product.cate_Id = '$id' order by cate_Id desc LIMIT 8";			
 			$result = $this->db->select($query);
 			return $result;
 		}

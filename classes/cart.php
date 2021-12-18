@@ -104,12 +104,17 @@
 
 		public function check_cart()
 		{
-			// code...
 			$sId = session_id();
 			$query = "SELECT *FROM tbl_cart WHERE ss_Id = '$sId'";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		
+		public function destroy_cart()
+		{
+			$sId = session_id();
+			$query = "DELETE FROM tbl_cart WHERE ss_Id = '$sId'";
+			$result = $this->db->delete($query);
+			return $result;
+		}
 	}
 ?>

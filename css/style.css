@@ -108,14 +108,19 @@ body{
 	margin-top:10px;
 	text-align: right;
 }
-
+.account_title{
+	float: left;
+	width: 200px;
+	margin-left: -115px;
+	margin-top: 55px;
+	text-align: center;
+}
  .shopping_cart{
 	float:left;
-	width: 202px;
 	position:relative;
-	margin-left:15px;
-	padding: 0 0 0 46px;
-	background: url(../images/header_cart.png) 0 0 no-repeat;
+	margin-left:195px;
+	margin-top:20px;
+	background: url(../images/cart.png) 0 0 no-repeat;
 	z-index: 99;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -124,13 +129,8 @@ body{
 }
 .cart{
 	height: 38px;
-	padding: 0 0 0 10px;
-	background: #EDEDED;
-	border: 1px solid #CECECE;
-	border-left: none;
-	line-height: 36px;
+	width: 40px;
 	-webkit-border-radius: 0 2px 2px 0;
-	border-radius: 0 2px 2px 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -186,44 +186,43 @@ input[type="number"] {
    	
 
 .login {
-  background: rgba(0, 0, 0, 0) url("../images/gradient_light-1.png") repeat-x scroll 0 0;
-  border: 1px solid #cecece;
-  box-sizing: border-box;
   color: #444;
   display: block;
   float: left;
   font-size: 27px;
-  height: 38px;
-  margin-left: 10px;
+  margin-left: 40px;
+  margin-top: 20px;
   text-align: center;
-  width: 144px;
 } 
 .login a {
 	color:#333;
 }
-/*** Login **
+
 .register_account h3,.login_panel h3{
 	font-size: 22px;
 	color: #6C6C6C;
 	font-family: 'Monda', sans-serif;
-	padding-bottom:.4em;
+	padding-bottom:2px;
 }
 .register_account {
   background: #fff none repeat scroll 0 0;
   border: 1px solid #c0bebe;
   border-radius: 3px;
   float: left;
-  height: 284px;
-  padding: 20px;
-  width: 712px;
+  height: 280px;
+  padding: 40px;
+  width: 380px;
+}
+.register_account form{
+	margin:15px 0;
 }
 .register_account form input[type="text"],.register_account form select{
 	font-size:12px;
-	color:#B3B1B1;
+	color:#000;
 	padding:8px;
 	outline:none;
 	margin:5px 0;
-	width:340px;
+	width:350px;
 }
 .register_account form select{
 	width:360px;
@@ -246,19 +245,25 @@ input[type="number"] {
 	float:left;
 	margin-top:3px;
 }
+input.grey {
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+}
 
 .login_panel{
 	float:left;
-	width: 245px;
+	height: 280px;
+ 	padding: 40px;
+  	width: 400px;
 	margin-right: 10px;
-	padding:20px;
 	background:#FFF;
 	border:1px solid #C0BEBE;
     -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;
 }
 .login_panel input[type="text"],.login_panel input[type="password"]{
 	font-size:12px;
-	color:#B3B1B1;
+	color:#000;
 	padding:8px;
 	outline:none;
 	margin:6px 0;
@@ -2562,9 +2567,9 @@ p.terms {
 }
 .success{
 	color: green;
-	font-size: 18px;
+	font-size: 16px;
 }
 .error{
 	color: red;
-	font-size: 18px;
+	font-size: 16px;
 }

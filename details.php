@@ -67,7 +67,18 @@
 				<div class="rightsidebar span_3_of_1">
 					<h2>Danh mục sản phẩm</h2>
 					<ul>
-				      <li><a href="productbycat.php">Văn học</a></li>				      
+						<?php 
+							$getall_cate = $cat->show_category_index();
+							if($getall_cate)
+							{
+								while($resultall_cate = $getall_cate->fetch_assoc())
+								{						
+						?>
+				      <li><a href="productbycat.php?catid=<?php echo $resultall_cate['cate_Id'] ?>"><?php echo $resultall_cate['cate_Name'] ?></a></li>	
+				      <?php 
+				      		}
+				      	}
+				      ?>			      
     				</ul>
     	
  				</div>	 
@@ -107,7 +118,7 @@
 				
 			</div>
  	</div>
-	
+</div>
 <?php
 		include 'inc/footer.php';
 ?>
