@@ -8,21 +8,6 @@
 	  	header('Location:login.php');
 	}
 ?>  
-<?php 
-	// if(!isset($_GET['prdid']) || $_GET['prdid']==NULL)
- //   {
- //      echo "<script>window.location = '404.php'</script>";
- //   }
- //   else
- //   {
- //      $id = $_GET['prdid'];
- //   }
- //   if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
- //   {
- //   	$quantily = $_POST['quantily'];
- //      $AddCart = $cart->add_cart($quantily, $id);
- //   }
-?>
 
  <div class="main">
     <div class="content">
@@ -63,17 +48,16 @@
     				<td>:</td>
     				<td><?php echo $result['cus_Email']?></td>
     			</tr>
-    			<tr>
-    				<td colspan="3"><a href="editprofile.php">Chỉnh sửa thông tin</a></td>
-    			</tr>
-    			<tr>  				
-    				<td colspan="3"><a href="editprofile.php">Chỉnh sửa thông tin</a></td>
-    			</tr>
+    			<tr></tr> 			
     			<?php
     					} 
     				}
     			?>
     		</table>
+    		<tr>
+    			<center style="margin:50px"><td colspan="3" style="color:#fff"><a href="editprofile.php" style="border-radius:5px;padding:10px;color:#fff;background:#000">Chỉnh sửa thông tin</a></td></center>
+    		</tr>
+
  		</div>
 	</div>
 <?php

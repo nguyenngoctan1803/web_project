@@ -62,7 +62,7 @@
 			   </div>
 		   		<div class="shopping_cart">
 		   			<div class="cart">
-		   				<a href="#" title="Giỏ hàng" rel="nofollow">
+		   				<a href="cart.php" title="Giỏ hàng" rel="nofollow">
 		   					<img width="30px" src="images/cart.png" alt="">
 		   				</a>
 		   			</div>	   			
@@ -76,9 +76,17 @@
 		   		}
 		   		?>
 		   		<div class="login">
-		   			<a href="login.php">
-		   				<img width="30px" src="images/admin.png" alt="">   				
-		   			</a>	   			
+		   			<?php 
+		   				$login_check = Session::get('customer_login');
+		   				if($login_check)
+		   				{
+		   					echo '<a href="?customerid='.Session::get('customer_id').'" title="Đăng xuất"><img width="30px" src="images/admin.png" alt=""></a>';
+		   				}
+		   				else
+		   				{
+		   					echo '<a href="login.php" title="Đăng nhập"><img width="30px" src="images/admin.png" alt=""></a>';
+		   				}
+		   			?>		
 		   		</div>
 		   		<div class="account_title">
 		   			<?php 
@@ -107,6 +115,18 @@
 	  	if($check_cart)
 	  	{
 	  		echo '<li><a href="cart.php">Cart</a></li>';
+	  	}
+	  	else
+	  	{
+	  		echo '';
+	  	}
+	  ?>  
+	  <?php 
+	  	$cusid = Session::get('customer_id');	
+	  	$check_order = $cart->check_order($cusid);
+	  	if($check_order)
+	  	{
+	  		echo '<li><a href="orderdone.php">Order</a></li>';
 	  	}
 	  	else
 	  	{

@@ -96,7 +96,7 @@
 			}
 			else
 			{
-				$mes = "<span class='success'>Xóa sản phẩm không thành công</span>";
+				$mes = "<span class='error'>Xóa sản phẩm không thành công</span>";
 				return $mes;
 			}
 			
@@ -109,12 +109,124 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
+
+		public function check_order($id)
+		{
+			$query = "SELECT *FROM tbl_order WHERE cus_Id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
 		public function destroy_cart()
 		{
 			$sId = session_id();
 			$query = "DELETE FROM tbl_cart WHERE ss_Id = '$sId'";
 			$result = $this->db->delete($query);
 			return $result;
+		}
+
+		public function insert_order($id)
+		{
+			$sId = session_id();
+			$query = "SELECT * FROM tbl_cart WHERE ss_Id = '$sId'";
+			$get_cart = $this->db->select($query);
+			if($get_cart)
+			{
+				while($result = $get_cart->fetch_assoc())
+				{
+					$prdid = $result['prd_Id'];
+					$cusid = $id;
+					$name = $result['cart_Name'];
+					$quantily = $result['cart_Quantily'];
+					$price = $result['cart_Price'] * $quantily;
+					$image = $result['cart_Image'];
+			
+					$query_insert = "INSERT INTO tbl_order(prd_Id,cus_Id,order_Name,order_Price,order_Image,order_Quantily) VALUES('$prdid','$cusid','$name','$price','$image','$quantily')";
+
+					$insert_order = $this->db->insert($query_insert); 					
+				}
+			}
+		}
+
+		public function get_order($id)
+		{
+			$query = "SELECT * FROM tbl_order WHERE cus_Id = '$id'";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+		public function delete_order($id)
+		{
+			$query = "DELETE  FROM tbl_order WHERE order_Id = '$id'";
+			$result = $this->db->delete($query);
+			return $result;
+		}
+
+
+		public function get_order_admin()
+		{
+			$query = "SELECT * FROM tbl_order ORDER BY order_Date desc";
+			$result = $this->db->select($query);
+			return $result;
+		}
+
+		public function send_order($id,$time,$price)
+		{
+			$id = mysqli_real_escape_string($this->db->link, $id);
+			$time = mysqli_real_escape_string($this->db->link, $time);
+			$price = mysqli_real_escape_string($this->db->link, $price);
+			$query = "UPDATE tbl_order SET order_Status = '1' WHERE order_Id = '$id' AND order_Date = '$time' AND order_Price = '$price'";
+			$result = $this->db->update($query);
+			if($result)
+			{
+				$mes = "<span class='success'>Xử lí đơn hàng thành công</span>";
+				return $mes;
+			}
+			else
+			{
+				$mes = "<span class='error'>Xử lí đơn hàng không thành công</span>";
+				return $mes;
+			}	
+			
+		}
+
+		public function receive_order($id,$time,$price)
+		{
+			$id = mysqli_real_escape_string($this->db->link, $id);
+			$time = mysqli_real_escape_string($this->db->link, $time);
+			$price = mysqli_real_escape_string($this->db->link, $price);
+			$query = "UPDATE tbl_order SET order_Status = '2' WHERE order_Id = '$id' AND order_Date = '$time' AND order_Price = '$price'";
+			$result = $this->db->update($query);
+			if($result)
+			{
+				$mes = "<span class='success'>Giao hàng thành công</span>";
+				return $mes;
+			}
+			else
+			{
+				$mes = "<span class='error'>Giao hàng không thành công</span>";
+				return $mes;
+			}	
+			
+		}
+
+		public function remove_order($id,$time,$price)
+		{
+			$id = mysqli_real_escape_string($this->db->link, $id);
+			$time = mysqli_real_escape_string($this->db->link, $time);
+			$price = mysqli_real_escape_string($this->db->link, $price);
+			$query = "DELETE FROM tbl_order WHERE order_Id = '$id' AND order_Date = '$time' AND order_Price = '$price'";
+			$result = $this->db->delete($query);
+			if($result)
+			{
+				$mes = "<span class='success'>Xóa đơn hàng thành công</span>";
+				return $mes;
+			}
+			else
+			{
+				$mes = "<span class='error'>Xóa đơn hàng không thành công</span>";
+				return $mes;
+			}	
 		}
 	}
 ?>

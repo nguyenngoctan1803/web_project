@@ -17,6 +17,12 @@
    }
 ?>
 
+<style>
+	.add-cart:active{
+		transform: scale(0.98);
+	}
+</style>
+
  <div class="main">
     <div class="content">
     	<div class="section group">
@@ -34,16 +40,19 @@
 					</div>
 				<div class="desc span_3_of_2">
 					<h2><?php echo $result_detail['prd_Name'] ?></h2>
-					<p><?php echo $fm->textShorten($result_detail['prd_Des'],100) ?></p>					
+					<p><?php echo $fm->textShorten($result_detail['prd_Des'],100) ?></p>	<br><br>				
 					<div class="price">
 						<p>Giá: <span><?php echo $result_detail['prd_Price']." "."VNĐ" ?></span></p>
 						<p>Danh mục: <span><?php echo $result_detail['cate_Name'] ?></span></p>
-						<p>Thể loại:<span><?php echo $result_detail['brand_Name'] ?></span></p>
+						<p>Thể loại: <span><?php echo $result_detail['brand_Name'] ?></span></p>
 					</div>
 				<div class="add-cart">
 					<form action="" method="post">
-						<input type="number" class="buyfield" name="quantily" value="1" min="1" />
-						<input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
+			
+						<p style="padding:1.5% 1%;color:#666">Số lượng: <input style="width:50px" type="number" class="buyfield" name="quantily" value="1" min="1"/></p>
+						<div style="float:right;margin-right:20px">
+						<input style="margin-top:17px;margin-left:10px;padding:11px 65px;font-size:16px"type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
+						</div>
 					</form>	
 					<?php 
 						if(isset($AddCart))
@@ -51,6 +60,9 @@
 						echo '<span style = "color:red;font-size:18px;">Sản phẩm đã được thêm vào giỏ hàng trước đó</span>';
 						}
 					?>			
+				</div>
+				<div style="float:left;margin-top:30px">
+					<a href="" class="buysubmit" style="margin-left:20px;background:white;color:red;padding:10px 20px;font-size:16px">Sản Phẩm Yêu Thích</a>
 				</div>
 			</div>
 			<div class="product-desc">

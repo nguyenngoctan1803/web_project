@@ -33,13 +33,13 @@
                 <input name="password" type="password" class="field" placeholder="Enter your Password...">           
                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p> 
                 <div class="buttons"><div><input type="submit" name="login" class="grey" value="Đăng nhập">      
-                	<?php 
-    				if(isset($loginCus))
-    				{
-    					echo $loginCus;
-    				}
-    				?>
-    								</div>
+                								<?php 
+    													if(isset($loginCus))
+    														{
+    															echo $loginCus;
+    														}
+    												?>
+    											</div>
     			</div>
             </form>
           </div>
