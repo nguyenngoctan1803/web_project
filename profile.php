@@ -18,7 +18,7 @@
     			</div>
     			<div class="clear"></div>
     		</div>
-    		<table class="tblone">
+    		<table style="border:1px solid" class="tblone">
     			<?php 
     			$id = Session::get('customer_id');
     				$get_info_cus = $cus->show_info($id); 

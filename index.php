@@ -16,15 +16,14 @@
 	      		$product_fea = $prd->getproduct_featured(); 
 	      		if($product_fea)
 	      		{
-	      			while($result_fea = $product_fea->fetch_assoc())
+	      			while($result_fea = $product_fea->fetch_assoc()) 
 	      			{
 
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php?prdid=<?php echo $result_fea['prd_Id'] ?>"><img src="images/sach1.jpg" alt="" /></a>
+					 <a href="details.php?prdid=<?php echo $result_fea['prd_Id']?>"><img src="admin/uploads/<?php echo $result_fea['prd_Image']?>" alt=""/></a>
 					 <h2><?php echo $fm->textShorten($result_fea['prd_Name'],30) ?></h2>
-					 <p><?php echo $fm->textShorten($result_fea['prd_Des'], 20) ?></p>
-					 <p><span class="price"><?php echo $result_fea['prd_Price']." VNĐ" ?></span></p>
+					 <p><span class="price"><?php echo $fm->format_money($result_fea['prd_Price'])." VNĐ" ?></span></p>
 				     <div class="button"><span><a href="details.php?prdid=<?php echo $result_fea['prd_Id'] ?>" class="details">Chi tiết sản phẩm</a></span></div>
 				</div>	
 				<?php 
@@ -48,10 +47,9 @@
 
 	      	?> 
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php?prdid=<?php echo $result_new['prd_Id']?>"><img src="images/sach1.jpg" alt="" /></a> 
+					 <a href="details.php?prdid=<?php echo $result_new['prd_Id']?>"><img src="admin/uploads/<?php echo $result_new['prd_Image']?>" alt="" /></a> 
 					 <h2><?php echo $result_new['prd_Name'] ?></h2>
-					 <p><?php echo $fm->textShorten($result_new['prd_Des'], 20) ?></p>
-					 <p><span class="price"><?php echo $result_new['prd_Price']."VNĐ" ?></span></p>
+					 <p><span class="price"><?php echo $fm->format_money($result_new['prd_Price'])." VNĐ" ?></span></p>
 				     <div class="button"><span><a href="details.php?prdid=<?php echo $result_new['prd_Id'] ?>" class="details">Chi tiết sản phẩm</a></span></div>
 				</div>	
 				<?php 

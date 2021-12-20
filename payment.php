@@ -39,7 +39,7 @@
     		</div>  	
          <div class="chose_method">
             <a href="offlinepay.php">Thanh toán khi nhận hàng</a>
-            <a href="onlinepay.php">Thanh toán trực tuyến</a>
+            <a style="padding:10px 25px " href="onlinepay.php">Thanh toán trực tuyến</a>
             </div>	
  		</div>
 	</div>

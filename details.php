@@ -10,15 +10,47 @@
    {
       $id = $_GET['prdid'];
    }
+   if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['favorite']))
+   {
+   	$cus_id = Session::get('customer_id');
+   	$prd_id = $_POST['prdid'];
+      $insertFavorite = $prd->insert_favorite($prd_id,$cus_id);
+   }
    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
    {
    	$quantily = $_POST['quantily'];
       $AddCart = $cart->add_cart($quantily, $id);
    }
+
 ?>
 
 <style>
+	.add-wis input.buysubmit {
+		margin-top:17px;
+		margin-left:10px;
+		padding:11px 25px;
+		font-size:18px;
+    	border: 3px solid;
+    	color: red;
+    	background: #fff;
+}	
+	.price p span{
+		font-size: 20px;
+	}
+	.price p {
+		font-size: 18px;
+	}
+	.add-cart input.buysubmit {
+		margin-top:16px;
+		margin-left:1px;
+		padding:13px 70px;
+		font-size:18px;
+		border: 2px solid;
+}
 	.add-cart:active{
+		transform: scale(0.98);
+	}
+	.add-wis:active{
 		transform: scale(0.98);
 	}
 </style>
@@ -36,40 +68,50 @@
     		?>
 				<div class="cont-desc span_1_of_2">				
 					<div class="grid images_3_of_2">
-						<img src="admin/uploads/<?php echo $result_detail['prd_Image'] ?>" alt="" />
+						<img src="admin/uploads/<?php echo $result_detail['prd_Image']?>" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
-					<h2><?php echo $result_detail['prd_Name'] ?></h2>
-					<p><?php echo $fm->textShorten($result_detail['prd_Des'],100) ?></p>	<br><br>				
+					<h2 style="font-size:22px;font-weight:bold;color:#0f5debfa;font-family:Monda"><?php echo $result_detail['prd_Name'] ?></h2>				
 					<div class="price">
-						<p>Giá: <span><?php echo $result_detail['prd_Price']." "."VNĐ" ?></span></p>
+						<p>Giá: <span><?php echo $fm->format_money($result_detail['prd_Price'])." VNĐ" ?></span></p>
 						<p>Danh mục: <span><?php echo $result_detail['cate_Name'] ?></span></p>
 						<p>Thể loại: <span><?php echo $result_detail['brand_Name'] ?></span></p>
 					</div>
 				<div class="add-cart">
-					<form action="" method="post">
-			
+					<form action="" method="post">	
 						<p style="padding:1.5% 1%;color:#666">Số lượng: <input style="width:50px" type="number" class="buyfield" name="quantily" value="1" min="1"/></p>
-						<div style="float:right;margin-right:20px">
-						<input style="margin-top:17px;margin-left:10px;padding:11px 65px;font-size:16px"type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
+						<div style="float:right">
+						<input style=""type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
 						</div>
-					</form>	
+					</form>						
+				</div>
+				<div class="add-wis">
+					<form action=""  method="POST">
+						<input type="hidden" name="prdid" value="<?php echo $result_detail['prd_Id'] ?>">
+						<input style=""type="submit" class="buysubmit" name="favorite" value="Sản phẩm yêu thích"/>					
+					</form>
+				</div>
+					<div class="clear"></div>
+					<?php 
+						if(isset($insertFavorite))
+						{
+							echo $insertFavorite;
+						}
+					?>
+						
 					<?php 
 						if(isset($AddCart))
-						{
-						echo '<span style = "color:red;font-size:18px;">Sản phẩm đã được thêm vào giỏ hàng trước đó</span>';
+						{ 
+							echo '<center><span style = "color:red;font-size:16px;">Sản phẩm đã được thêm vào giỏ hàng trước đó</span></center>';
 						}
-					?>			
+					?>		
+					<div class="clear"></div>
 				</div>
-				<div style="float:left;margin-top:30px">
-					<a href="" class="buysubmit" style="margin-left:20px;background:white;color:red;padding:10px 20px;font-size:16px">Sản Phẩm Yêu Thích</a>
-				</div>
-			</div>
-			<div class="product-desc">
+		<div class="product-desc">
 			<h2>Mô tả sản phẩm</h2>
-			<p><?php echo $fm->textShorten($result_detail['prd_Des'],100) ?></p>
+			<p><?php echo $result_detail['prd_Des'] ?></p>
 	        <p></p>
-	    </div>
+	   </div>
 				
 				</div>
 			<?php 

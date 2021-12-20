@@ -9,14 +9,6 @@
 	}
 ?>  
 <?php 
-	// if(!isset($_GET['prdid']) || $_GET['prdid']==NULL)
- //   {
- //      echo "<script>window.location = '404.php'</script>";
- //   }
- //   else
- //   {
- //      $id = $_GET['prdid'];
- //   }
    $id = Session::get('customer_id');
    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save']))
    {
@@ -34,7 +26,7 @@
     			<div class="clear"></div>
     		</div>
          <form action="" method="POST">
-    		<table class="tblone">
+    		<table style="border:1px solid" class="tblone">
     			<?php 
     			$id = Session::get('customer_id');
     				$get_info_cus = $cus->show_info($id); 
@@ -65,11 +57,11 @@
                <td><input style="width:500px;height:25px;text-align:center" type="text" name="email"  value="<?php echo $result['cus_Email']?>"></td>
     			</tr>
     			<tr>
-    				<td colspan="3"><input style="margin-left:222px" type="submit" name="save" value="Save" class="grey"></td>
+    				<td colspan="3"><input style="margin-left:206px" type="submit" name="save" value="Save" class="grey"></td>
     			</tr>
             <tr>
                <?php 
-                  if($updateCus)
+                  if(isset($updateCus))
                   {
                      echo '<td colspan="3">'.$updateCus.'</td>';
                   } 

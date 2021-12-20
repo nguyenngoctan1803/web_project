@@ -110,10 +110,11 @@ body{
 }
 .account_title{
 	float: left;
-	width: 200px;
-	margin-left: -115px;
+	width: 140px;
+	margin-left: -84px;
 	margin-top: 55px;
 	text-align: center;
+	font-size: 12px;
 }
  .shopping_cart{
 	float:left;
@@ -130,10 +131,11 @@ body{
 .cart{
 	height: 38px;
 	width: 40px;
-	-webkit-border-radius: 0 2px 2px 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	float: left;
+	margin-left: 12px;
+}
+.cart:active{
+	transform: scale(0.95);
 }
 .shopping_cart .cart .opencart {
 	width: 7px;
@@ -156,8 +158,9 @@ body{
 }
 input[type="number"] {
   border: 1px solid #b8b8b8;
-  border-radius: 3px;
+  border-radius: 4px;
   padding: 7px;
+  
 }
 .buysubmit{
 	background: #ed0606;
@@ -189,12 +192,15 @@ input[type="number"] {
   display: block;
   float: left;
   font-size: 27px;
-  margin-left: 40px;
+  margin-left: 15px;
   margin-top: 20px;
   text-align: center;
 } 
 .login a {
 	color:#333;
+}
+.login:active{
+	transform: scale(0.95);	
 }
 
 .register_account h3,.login_panel h3{
@@ -662,6 +668,7 @@ p.note{
 }
 .images_1_of_4  img{
 	max-width:100%;
+	height: 300px;
 }
 .discount{
 	background:url(../images/discount-img.png) no-repeat 0 0;
@@ -973,7 +980,7 @@ p.note{
 	padding:1.5%;
 }
 .images_3_of_2 img {
-  height: 400px;
+  height: 450px;
   max-width: 100%;
   width: 400px;
 }
@@ -1076,8 +1083,8 @@ p.note{
 }
 .product-desc p{
 	font-size: 0.8em;
-	padding: 0.3em 0;
-	color: #969696;
+	padding: 0.3em 15px;
+	color: #000;
 	line-height: 1.6em;
 	font-family: verdana, arial, helvetica, helve, sans-serif;
 }
@@ -1491,7 +1498,11 @@ p.note{
   padding: 5px 8px;
   text-align: center;
 }
-.tblone td{padding:10px;text-align:center;}
+.tblone td{
+	padding:10px;
+	text-align:center;
+	vertical-align: middle;
+}
 
 table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
 table.tblone tr:nth-child(2n){background:#fdf0f1;height:30px;}
@@ -1515,10 +1526,10 @@ table.tblone a {
   text-decoration: none;
 }
 table.tblone a:hover{color: #000;}
-table.tblone img {
-  height: 20px;
-  width: 30px;
-}
+/* table.tblone img {
+  height: 30px;
+  width: 20px;
+} */
 .shopping {
   margin-top: 30px;
 }

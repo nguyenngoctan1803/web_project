@@ -1,44 +1,34 @@
 <?php
 		include 'inc/header.php';
 ?>
-<?php 
-	if(!isset($_GET['catid']) || $_GET['catid']==NULL)
-   {
-      echo "<script>window.location = '404.php'</script>";
-   }
-   else
-   {
-      $id = $_GET['catid'];
-   }
 
-   // if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
-   // {
-   //    $updateProduct = $pd->update_product($_POST, $_FILES, $id);
-   // }
-?>
  <div class="main">
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
     		<?php 
-    			$get_cate_name = $cat->get_prd_cate($id);
-	      	if($get_cate_name)
-	      	{
-	      		$cateName = $get_cate_name->fetch_assoc();
-    		?>
-    		<h3 style="color:red">Danh mục: <?php echo $cateName['cate_Name'] ?></h3>
+   			if($_SERVER['REQUEST_METHOD'] == 'POST')
+   			{
+      			$keyword = $_POST['keyword'];
+      			if($keyword == '')
+      			{
+      				header('Location:index.php');
+      			}
+      			else
+      			{
+      				$searchPrd = $prd->search_product($keyword);
+      			}
+   			}
+			 ?>
+    		<h3 style="color:green">Sản phẩm cho: <?php echo $keyword ?></h3>
     		</div>
-    		<?php 
-    			}
-    		?>
     		<div class="clear"></div>
     	</div>
 	      <div class="section group">
 	      <?php 
-	      	$get_prd_cate = $cat->get_prd_cate($id);
-	      	if($get_prd_cate)
+	      	if($searchPrd)
 	      	{
-	      		while($result = $get_prd_cate->fetch_assoc())
+	      		while($result = $searchPrd->fetch_assoc())
 	      		{      			
 	      					
 	      ?>

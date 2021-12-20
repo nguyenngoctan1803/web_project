@@ -41,14 +41,14 @@
 			    			echo $delCart;
 			    		}
 			    	?>
-						<table class="tblone">
+						<table style="border:1px solid" class="tblone">
 							<tr>
-								<th width="20%">Tên sản phẩm</th>
+								<th width="25%">Tên sản phẩm</th>
 								<th width="10%">Hình ảnh</th>
 								<th width="15%">Giá</th>
-								<th width="25%">Số lượng</th>
+								<th width="20%">Số lượng</th>
 								<th width="20%">Thành tiền</th>
-								<th width="10%"><img src="images/waste_104px.png" alt="delete" /></th>
+								<th width="10%"></th>
 							</tr>
 							<?php
 								$get_prd_cart = $cart->get_prd_cart();
@@ -62,7 +62,7 @@
 							<tr>
 								<td><?php echo $result['cart_Name'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['cart_Image']?>" alt=""/></td>
-								<td><?php echo $result['cart_Price'] ?></td>
+								<td><?php echo $fm->format_money($result['cart_Price'])." VNĐ" ?></td>
 								<td>
 									<form action="" method="post">
 										<input type="hidden" name="cart_Id" value="<?php echo $result['cart_Id'] ?>"/>
@@ -73,7 +73,7 @@
 								<td>
 									<?php 
 										$total = $result['cart_Price'] * $result['cart_Quantily'];
-										echo $total;
+										echo $fm->format_money($total)." VNĐ";
 									?>								 	
 								</td>
 								<td><a href="?cartid=<?php echo $result['cart_Id'] ?>">Xóa</a></td>
@@ -96,13 +96,13 @@
 								<th width="120px">Tạm tính :</th>
 								<td>
 									<?php  
-										echo $subtotal;
+										echo $fm->format_money($subtotal)." VNĐ";
 									?>								
 								</td>
 							</tr>
 							<tr>
 								<th>Thuế (VAT) :</th>
-								<td>10%</td>
+								<td>10% (<?php echo $fm->format_money($subtotal*0.1)." VNĐ" ?>)</td>
 							</tr>
 							<tr>
 								<th>Tổng tiền :</th>
@@ -110,7 +110,7 @@
 									<?php 
 										$vat = $subtotal * 0.1;
 										$sum = $vat + $subtotal;
-										echo $sum;
+										echo $fm->format_money($sum)." VNĐ";
 									?>								
 								</td>
 							</tr>

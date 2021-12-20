@@ -139,8 +139,8 @@
                         <label>Upload Image</label>
                     </td>
                     <td>
-                        <img src="uploads/<?php echo $result_prd['prd_Image'] ?>" width="100"><br>
-                        <input type="file" name="image" />
+                        <img src="uploads/<?php echo $result_prd['prd_Image']?>" width="100"><br>
+                        <input type="file" name="image"/>
                     </td>
                 </tr>
 				

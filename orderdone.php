@@ -86,13 +86,13 @@
 							<tr>
 								<td><?php echo $i ?></td>
 								<td><?php echo $result['order_Name'] ?></td>
-								<td><?php echo $result['order_Image'] ?></td>
+								<td><img src="admin/uploads/<?php echo $result['order_Image'] ?>" alt="" width="100px"></td>
 								<td><?php echo $result['order_Quantily'] ?></td>
-								<td><?php echo $result['order_Price']." VNĐ" ?></td>	
+								<td><?php echo $fm->format_money($result['order_Price'])." VNĐ" ?></td>	
 								<td>
 									<?php 
 										$total = $result['order_Price']*$result['order_Quantily'];
-										echo $total." VNĐ" 
+										echo $fm->format_money($total)." VNĐ" 
 									?>
 								</td>	
 								<td>
@@ -139,18 +139,26 @@
 								}
 							?>						
 						</table>
-						<table style="float:right;text-align:left;margin:15px" width="30%">
+						<table style="float:right;text-align:left;margin:15px" width="37%">
 							<tr>
+								<td>
+									Tổng: 
+									<?php
+										echo $fm->format_money($sumtotal)." VNĐ";
+									?>
+								</td>
+							</tr>
+							<!-- <tr>
 								<th width="120px">Tạm tính :</th>
 								<td>
 									<?php  
-										echo $sumtotal." VNĐ";
+										echo $fm->format_money($sumtotal)." VNĐ";
 									?>						
 								</td>
 							</tr>
 							<tr>
 								<th>Thuế (VAT) :</th>
-								<td>10% (<?php echo $sumtotal * 0.1?> VNĐ) </td>
+								<td>10% (<?php echo $fm->format_money($sumtotal * 0.1)?> VNĐ) </td>
 							</tr>
 							<tr>
 								<th>Tổng tiền :</th>
@@ -158,10 +166,10 @@
 									<?php 
 										$vat = $sumtotal * 0.1;
 										$sum = $vat + $sumtotal;
-										echo $sum." VNĐ";
+										echo $fm->format_money($sum)." VNĐ";
 									?>													
 								</td>
-							</tr>
+							</tr> -->
 					   </table>
 					   	
 					</div>

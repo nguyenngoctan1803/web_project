@@ -56,12 +56,27 @@
 			</div>
 			<div class="header_top_right">
 			   <div class="search_box">	
-				    <form>
-				    	<input type="text" value="Tìm kiếm sản phẩm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Tìm kiếm sản phẩm';}"/> <input type="image" src="images/searchh.png" width="30"/>		   			
+				    <form action="search.php" method="POST">
+				    	<input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm"/><input type="hidden" name="search" value=""><input type="image" src="images/searchh.png" width="30"/>		   			
 				    </form>
 			   </div>
 		   		<div class="shopping_cart">
-		   			<div class="cart">
+		   			<div class="cart" style="margin-top:2px">
+		   				<?php
+		   					 $login_check = Session::get('customer_login');
+		   					 if($login_check)
+		   					 {
+		   					 		echo '<a href="favorite.php" title="Sản phẩm yêu thích" rel="nofollow">
+		   											<img width="30px" src="images/heart.png" alt="">
+		   										</a>';
+		   					 }
+		   					 else
+		   					 {
+		   					 	echo '';
+		   					 }
+		   				?>
+		   			</div>
+		   			<div class="cart">   				
 		   				<a href="cart.php" title="Giỏ hàng" rel="nofollow">
 		   					<img width="30px" src="images/cart.png" alt="">
 		   				</a>

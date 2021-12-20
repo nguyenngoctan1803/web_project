@@ -63,7 +63,7 @@
 							<th width="10%">Số Lượng</th>
 							<th width="10%">Giá</th>
 							<th width="15%">Thời Gian</th>
-							<th width="10%">Địa Chỉ</th> 
+							<th width="10%">Thông Tin</th> 
 							<th width="10%">Trạng Thái</th>
 						</tr>
 					</thead>
@@ -79,7 +79,7 @@
 									$i++;
 						?>
 						<tr class="odd gradeX">
-							<td>$i</td>
+							<td><?php echo $i ?></td>
 							<td><?php echo $result['order_Name']?></td>
 							<td><?php echo $result['order_Quantily']?></td>
 							<td><?php echo $result['order_Price']?></td>

@@ -10,7 +10,7 @@
 				?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php?prdid=<?php echo $result1['prd_Id']?>"> <img src="images/sach1.jpg" alt="" /></a>
+						 <a href="details.php?prdid=<?php echo $result1['prd_Id']?>"> <img src="admin/uploads/<?php echo $result1['prd_Image']?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
 						<h4 style="color:red">TIỂU THUYẾT</h4>
@@ -31,7 +31,7 @@
 				?>			
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="details.php?prdid=<?php echo $result2['prd_Id']?>"><img src="images/sach1.jpg" alt="" / ></a>
+						  <a href="details.php?prdid=<?php echo $result2['prd_Id']?>"><img src="admin/uploads/<?php echo $result2['prd_Image']?>" alt="" / ></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h4 style="color:red">LIGHT NOVEL</h4>
@@ -54,7 +54,7 @@
 				?>			
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php?prdid=<?php echo $result3['prd_Id']?>"> <img src="images/sach1.jpg" alt="" /></a>
+						 <a href="details.php?prdid=<?php echo $result3['prd_Id']?>"> <img src="admin/uploads/<?php echo $result3['prd_Image']?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
 						<h4 style="color:red">SÁCH THAM KHẢO</h4>
@@ -75,7 +75,7 @@
 				?>			
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="details.php?prdid=<?php echo $result4['prd_Id']?>"><img src="images/sach1.jpg" alt="" /></a>
+						  <a href="details.php?prdid=<?php echo $result4['prd_Id']?>"><img src="admin/uploads/<?php echo $result4['prd_Image']?>" alt="" /></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h4 style="color:red">SÁCH GIÁO KHOA</h4>
@@ -94,10 +94,21 @@
 			<section class="slider">
 				  <div class="flexslider">
 					<ul class="slides">
-						<li><img src="images/Slider-onhavanvui.png" alt=""/></li>
-						<li><img src="images/slider-thieunhi.png" alt=""/></li>
-						<li><img src="images/sachkynang.jpg" alt=""/></li>	
-						<li><img src="images/sachchobe.jpg" alt=""/></li>
+						<?php 
+							$showSlider = $prd->show_slider();
+							if($showSlider)
+							{
+								while($result = $showSlider->fetch_assoc())
+								{
+											
+							
+						?>
+							<li><img src="admin/uploads/<?php echo $result['slide_Image'] ?>" alt=""/></li>			
+						<?php 
+								}
+							}
+						?>
+						
 				    </ul>
 				  </div>
 	      </section>

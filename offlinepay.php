@@ -31,6 +31,9 @@
    center.submit_order:active{
     	transform: scale(0.95);
 	}
+	center.submit_order:hover{
+    	transform: scale(1.1);
+	}
 	a.submit_order {
     	border: none;
     	border-radius:8px;
@@ -86,12 +89,12 @@
 							<tr>
 								<td><?php echo $i ?></td>
 								<td><?php echo $result['cart_Name'] ?></td>
-								<td><?php echo $result['cart_Price']." VNĐ" ?></td>
+								<td><?php echo $fm->format_money($result['cart_Price'])." VNĐ" ?></td>
 								<td><?php echo $result['cart_Quantily'] ?></td>
 								<td>
 									<?php 
 										$total = $result['cart_Price'] * $result['cart_Quantily'];
-										echo $total." VNĐ";
+										echo $fm->format_money($total)." VNĐ";
 									?>	
 								</td>
 							</tr>							 									
@@ -115,13 +118,13 @@
 								<th width="120px">Tạm tính :</th>
 								<td>
 									<?php  
-										echo $subtotal." VNĐ";
+										echo $fm->format_money($subtotal)." VNĐ";
 									?>								
 								</td>
 							</tr>
 							<tr>
 								<th>Thuế (VAT) :</th>
-								<td>10% (<?php echo $subtotal * 0.1?> VNĐ)</td>
+								<td>10% (<?php echo $fm->format_money($subtotal * 0.1)." VNĐ"?>)</td>
 							</tr>
 							<tr>
 								<th>Tổng tiền :</th>
@@ -129,7 +132,7 @@
 									<?php 
 										$vat = $subtotal * 0.1;
 										$sum = $vat + $subtotal;
-										echo $sum." VNĐ";
+										echo $fm->format_money($sum)." VNĐ";
 									?>								
 								</td>
 							</tr>
