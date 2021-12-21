@@ -29,7 +29,11 @@
                         <li><a href="sliderlist.php">Danh Sách Slider</a> </li>
                     </ul>
                 </li>
-
+                <li><a class="menuitem">Order</a>
+                    <ul class="submenu">
+                        <li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li> 
+                    </ul>
+                </li>
                 <!-- <li><a class="menuitem">Site Option</a>
                     <ul class="submenu">
                         <li><a href="titleslogan.php">Title & Slogan</a></li>

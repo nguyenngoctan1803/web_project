@@ -28,7 +28,7 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h3>Giỏ hàng của bạn</h3> 
+			    	<h3 style="color:red">Giỏ hàng của bạn</h3> 
 			    	<?php 
 			    		if(isset($update_quantily))
 			    		{

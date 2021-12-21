@@ -74,6 +74,16 @@
 			return $result;
 		}
 
+		public function get_prd_brand($id)
+		{
+			$query= "SELECT tbl_product.*, tbl_brand.brand_Name
+					FROM tbl_product 
+					INNER JOIN tbl_brand ON tbl_product.brand_Id = tbl_brand.brand_Id					
+					WHERE tbl_product.brand_Id = '$id' order by brand_Id desc LIMIT 8";			
+			$result = $this->db->select($query);
+			return $result;
+		}
+
 		public function update_category($catName, $id)
 		{
 			$catName = $this->fm->validation($catName);

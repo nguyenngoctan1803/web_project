@@ -5,7 +5,7 @@
 	$login_check = Session::get('customer_login');
 	if($login_check)
 	{
-		header('Location:order.php');
+		header('Location:index.php');
 	}		   				
 ?>
 <?php 
@@ -31,7 +31,6 @@
         	<form action="" method="POST">
                 <input name="email" type="text" class="field" placeholder="Enter your Email...">
                 <input name="password" type="password" class="field" placeholder="Enter your Password...">           
-                <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p> 
                 <div class="buttons"><div><input type="submit" name="login" class="grey" value="Đăng nhập">      
                 								<?php 
     													if(isset($loginCus))

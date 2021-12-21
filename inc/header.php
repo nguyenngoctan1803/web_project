@@ -20,12 +20,15 @@
 	$prd = new product();
 
 ?>
+
+
 <?php
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
   header("Cache-Control: max-age=2592000");
 ?>
+
 <!DOCTYPE HTML>
 <head>
 <title>Store Website</title>
@@ -120,16 +123,16 @@
 	 		</div>
 	 <div class="clear"></div>
  </div>
-<div class="menu">
+<div style="font-family:Monda" class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Home</a></li>
-	  <li><a href="products.php">Products</a> </li>
-	  <li><a href="topbrands.php">Top Brands</a></li>
+	  <li><a style="font-family:Monda" href="index.php">TRANG CHỦ</a></li>
+	  <li><a style="font-family:Monda" href="products.php">SẢN PHẦM</a> </li>
+	  <li><a style="font-family:Monda" href="topbrands.php">Top Brands</a></li>
 	  <?php 
 	  	$check_cart = $cart->check_cart();
 	  	if($check_cart)
 	  	{
-	  		echo '<li><a href="cart.php">Cart</a></li>';
+	  		echo '<li><a style="font-family:Monda" href="cart.php">GIỎ HÀNG</a></li>';
 	  	}
 	  	else
 	  	{
@@ -141,19 +144,19 @@
 	  	$check_order = $cart->check_order($cusid);
 	  	if($check_order)
 	  	{
-	  		echo '<li><a href="orderdone.php">Order</a></li>';
+	  		echo '<li><a style="font-family:Monda" href="orderdone.php">ĐƠN HÀNG</a></li>';
 	  	}
 	  	else
 	  	{
 	  		echo '';
 	  	}
 	  ?>  
-	  <li><a href="contact.php">Contact</a> </li>
+	  <li><a style="font-family:Monda" href="contact.php">Contact</a> </li>
 	  <?php 
 	  	$login_check = Session::get('customer_login');
 	  	if($login_check)
 	  	{
-	  		echo '<li><a href="profile.php">Profile</a> </li>';
+	  		echo '<li><a style="font-family:Monda" href="profile.php">Profile</a> </li>';
 	  	}
 	  	else
 	  	{
@@ -162,4 +165,5 @@
 	  ?>  
 	  <div class="clear"></div>
 	</ul>
+	
 </div>

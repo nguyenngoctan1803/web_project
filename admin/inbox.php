@@ -35,7 +35,7 @@
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Đơn hàng</h2>
+                <h2>Tất Cả Đơn hàng</h2>
                 <div class="block"> 
                 <?php 
                 	if(isset($send))

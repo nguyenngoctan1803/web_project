@@ -1,3 +1,8 @@
+<style>
+.flex-viewport{
+
+}
+</style>
  	<div class="header_bottom">
 		<div class="header_bottom_left">
 			<div class="section group">
@@ -103,7 +108,7 @@
 											
 							
 						?>
-							<li><img src="admin/uploads/<?php echo $result['slide_Image'] ?>" alt=""/></li>			
+							<li><img height="327px" src="admin/uploads/<?php echo $result['slide_Image'] ?>" alt=""/></li>			
 						<?php 
 								}
 							}

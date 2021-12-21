@@ -4,108 +4,63 @@
 
  <div class="main">
     <div class="content">
+    	<?php 
+    		$id = 1;
+    		while($id)
+    		{
+    	?>
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Tiểu thuyết</h3>
+    		<?php   			
+   			$get_brand_name = $cat->get_prd_brand($id);
+	      	if($get_brand_name)
+	      	{
+	      		$brandName = $get_brand_name->fetch_assoc();  			
+    			
+    		?>
+    		<h3><?php echo $brandName['brand_Name'] ?></h3>
     		</div>
+    		<?php 
+    			}
+    			else
+    			{
+    				//
+    			}
+    		?>
     		<div class="clear"></div>
     	</div>
 	      <div class="section group">
+	      <?php 
+	      	$get_prd_brand = $cat->get_prd_brand($id);
+	      	if($get_prd_brand)
+	      	{
+	      		while($result = $get_prd_brand->fetch_assoc())
+	      		{      			
+	      					
+	      ?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-					 <p><span class="price">$505.22</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-					 <p><span class="price">$620.87</span></p> 
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-					 <p><span class="price">$220.97</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-					 <p><span class="price">$415.54</span></p> 
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
+					 <a href="details.php?prdid=<?php echo $result['prd_Id']?>"><img src="admin/uploads/<?php echo $result['prd_Image']?>" alt="" /></a>
+					 <h2><?php echo $fm->textShorten($result['prd_Name'],30)?></h2> 
+					 <p><span class="price"><?php echo $fm->format_money($result['prd_Price'])." VNĐ" ?></span></p>
+				     <div class="button"><span><a href="details.php?prdid=<?php echo $result['prd_Id']?>" class="details">Chi tiết</a></span></div>
+				</div>	
+			<?php 
+					}
+				}
+
+
+			?>							
 			</div>
-		<div class="content_bottom">
-    		<div class="heading">
-    		<h3>Kinh tế</h3>
-    		</div>
-    		<div class="clear"></div>
-    	</div>
-			<div class="section group">
-				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$403.66</span></p>
-				    
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$621.75</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$428.02</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>					 
-					 <p><span class="price">$457.88</span></p>   
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-			</div>
-	<div class="content_bottom">
-    		<div class="heading">
-    		<h3>Sách giáo khoa</h3>
-    		</div>
-    		<div class="clear"></div>
-    	</div>
-			<div class="section group">
-				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$403.66</span></p>
-				    
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$621.75</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$428.02</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/sach1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>					 
-					 <p><span class="price">$457.88</span></p>   
-				     <div class="button"><span><a href="preview.php" class="details">Chi tiết sản phẩm</a></span></div>
-				</div>
-			</div>
+			<div class="clear"></div>
+			<?php 
+    			$id+=1;
+    			$flag = $cat->get_prd_brand($id);
+	      	if(!$flag)
+	      	{
+	      		break;
+	      	}
+    		}
+    	?>
     </div>
  </div>
 

@@ -80,7 +80,7 @@
 				<div class="add-cart">
 					<form action="" method="post">	
 						<p style="padding:1.5% 1%;color:#666">Số lượng: <input style="width:50px" type="number" class="buyfield" name="quantily" value="1" min="1"/></p>
-						<div style="float:right">
+						<div style="float:right;width:55%">
 						<input style=""type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
 						</div>
 					</form>						
@@ -137,7 +137,7 @@
     	
  				</div>	 
  		</div>
-		 <div class="related_product">
+		 <!-- <div class="related_product">
     		<div class="heading">
     		<h3>Sản phẩm liên quan</h3>
     		</div>
@@ -170,7 +170,7 @@
 				     <div class="button"><span><a href="details.php" class="details">Chi tiết sản phẩm</a></span></div>
 				</div>
 				
-			</div>
+			</div> -->
  	</div>
 </div>
 <?php

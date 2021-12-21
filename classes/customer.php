@@ -73,7 +73,7 @@
 					Session::set('customer_login',true);
 					Session::set('customer_id',$value['cus_Id']);
 					Session::set('customer_name',$value['cus_Name']);
-					header('Location:order.php');
+					header('Location:index.php');
 				}
 				else
 				{
