@@ -43,7 +43,7 @@
 	      					
 	      ?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php?prdid=<?php echo $result['prd_Id']?>"><img src="images/sach1.jpg" alt="" /></a>
+					 <a href="details.php?prdid=<?php echo $result['prd_Id']?>"><img src="admin/uploads/<?php echo $result['prd_Image']?>" alt="" /></a>
 					 <h2><?php echo $fm->textShorten($result['prd_Name'],30)?></h2> 
 					 <p><?php echo $fm->textShorten($result['prd_Des'], 50) ?></p>
 					 <p><span class="price"><?php echo $fm->format_money($result['prd_Price'])." VNĐ" ?></span></p>

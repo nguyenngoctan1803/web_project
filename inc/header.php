@@ -79,17 +79,26 @@
 		   					 }
 		   				?>
 		   			</div>
-		   			<div class="cart">   				
-		   				<a href="cart.php" title="Giỏ hàng" rel="nofollow">
-		   					<img width="30px" src="images/cart.png" alt="">
-		   				</a>
+		   			<div class="cart"> 
+		   				<?php
+		   					 $login_check = Session::get('customer_login');
+		   					 if($login_check)
+		   					 {
+		   					 		echo '<a href="cart.php" title="Giỏ hàng" rel="nofollow">
+		   											<img width="30px" src="images/cart.png" alt="">
+		   										</a>';
+		   					 }
+		   					 else
+		   					 {
+		   					 	echo '';
+		   					 }
+		   				?>  				
 		   			</div>	   			
 		   				
 		   		</div>
 		   		<?php 
 		   		if(isset($_GET['customerid']))
 		   		{
-		   			$deytroyCart = $cart->destroy_cart();
 		   			Session::destroy();
 		   		}
 		   		?>

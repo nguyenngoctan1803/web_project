@@ -19,7 +19,15 @@
 					</div>
 				    <div class="text list_2_of_1">
 						<h4 style="color:red">TIỂU THUYẾT</h4>
-						<p><?php echo $result1['prd_Name']?></p>
+						<p style="display: -webkit-box;
+                            max-height: 3.2rem;
+                           -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: normal;
+                            -webkit-line-clamp: 2;
+                            line-height: 1.6rem;
+"><?php echo $result1['prd_Name']?></p>
 						<div class="button"><span><a href="details.php?prdid=<?php echo $result1['prd_Id']?>">chi tiết</a></span></div>		
 				   </div>
 			   </div>

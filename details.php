@@ -18,8 +18,17 @@
    }
    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
    {
-   	$quantily = $_POST['quantily'];
-      $AddCart = $cart->add_cart($quantily, $id);
+   	$login_check = Session::get('customer_login');
+		if($login_check)
+		{
+			$quantily = $_POST['quantily'];
+      	$AddCart = $cart->add_cart($quantily, $id);
+		}
+		else
+		{
+			header('Location:login.php');
+		}
+   	
    }
 
 ?>
@@ -43,7 +52,7 @@
 	.add-cart input.buysubmit {
 		margin-top:16px;
 		margin-left:1px;
-		padding:13px 70px;
+		padding:13px 75px;
 		font-size:18px;
 		border: 2px solid;
 }
@@ -80,7 +89,7 @@
 				<div class="add-cart">
 					<form action="" method="post">	
 						<p style="padding:1.5% 1%;color:#666">Số lượng: <input style="width:50px" type="number" class="buyfield" name="quantily" value="1" min="1"/></p>
-						<div style="float:right;width:55%">
+						<div style="float:right;width:45%">
 						<input style=""type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
 						</div>
 					</form>						
@@ -92,19 +101,22 @@
 					</form>
 				</div>
 					<div class="clear"></div>
-					<?php 
+					<div style="margin-top:20px;margin-left:20px">
+						<?php 
 						if(isset($insertFavorite))
 						{
 							echo $insertFavorite;
 						}
-					?>
+						?>
 						
-					<?php 
+						<?php 
 						if(isset($AddCart))
 						{ 
 							echo '<center><span style = "color:red;font-size:16px;">Sản phẩm đã được thêm vào giỏ hàng trước đó</span></center>';
 						}
-					?>		
+						?>		
+					</div>
+					
 					<div class="clear"></div>
 				</div>
 		<div class="product-desc">
